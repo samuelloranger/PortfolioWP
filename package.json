@@ -1,0 +1,15 @@
+{
+  "name": "samuelloranger",
+  "version": "1.0.0",
+  "description": "Thême Wordpress personnel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Loranger",
+  "license": "ISC",
+  "dependencies": {
+    "normalize-scss": "^7.0.1",
+    "sass": "^1.22.9"
+  }
+}
