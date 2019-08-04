@@ -1,0 +1,38 @@
+/**
+  * @author Samuel Loranger <samuelloranger@gmail.com>
+ **/
+
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Roboto');
+
+/** Polices de caractères **/
+@font-face {
+  font-family: 'alfaslabone-regular';
+  src: url("../../fonts/AlfaSlabOne-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'roboto-bold';
+  src: url("../../fonts/Roboto-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url("../../fonts/Roboto-Regular.ttf") format("ttf");
+}
+
+$fontePrimaire: 'Alfa Slab One', alfaslabone-regular, Arial, sans-serif;
+
+$fonteSecondaire: 'Roboto', roboto, Arial, sans-serif;
+$fonteSecondaireBold: 'Roboto', roboto-bold, Arial, sans-serif;
+
+/* Couleurs de base */
+//$gris: #F8F8F8;
+$gris: #E3E3E3;
+$vert: #62AE5A;
+$vertHover: #46833F;
+$vertFonce: #307e2e;
+$jaune: #E5D94B;
+
+/** Points de rupture **/
+$bureau : 600px;
+
