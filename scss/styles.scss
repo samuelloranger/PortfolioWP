@@ -1,11 +1,40 @@
-/*
-Theme Name: Samuel Loranger
-Author: Samuel Loranger
-Author URI: http://samuelloranger.com
-Description: Thême personnalisé pour Samuel Loranger
-Version: 1.0
-Text Domain: Samuel Loranger
-*/
+/**
+  @author Samuel Loranger <samuelloranger@gmail.com>
+ */
 
+/**
+ * ------------------
+ * TABLE DES MATIÈRES
+ * ------------------
+ * Librairies
+ * Utilitaires
+ * Base
+ * Modules
+ * Grille
+ */
+/****** Setup ******/
+$hamburger-layer-color : #ffffff;
+$hamburger-padding-x: 5px;
+$hamburger-padding-y: 5px;
+$hamburger-types : (spin);
+
+/****** Librairies ******/
+@import "../node_modules/normalize-sass/normalize";
+@import "../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+
+/**** Utilitaires ****/
+@import "utilitaires/variables";
+@import "utilitaires/mixins";
+
+/****** Base ******/
 @import "base/typo";
-@import "~normalize-scss/sass/normalize/import-now"
+@import "base/boutons";
+@import "base/general";
+
+/****** Modules ******/
+@import "modules/header";
+@import "modules/accueil";
+@import "modules/footer";
+
+/****** Grille ******/
+@import "grille/general";

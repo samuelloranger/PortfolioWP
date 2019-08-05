@@ -1,0 +1,185 @@
+/**
+  @author Samuel Loranger <samuelloranger@gmail.com>
+ */
+
+.header {
+  background-color: $grey;
+  color: white;
+
+  @media(min-width: $tablet){
+    position: fixed;
+    max-width: 20%;
+    height: 100%;
+    transition: 0.15s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @media(min-width: $desktop-large){
+    max-width: 10%;
+  }
+
+  .menu-menu-principal-container {
+    .menu {
+      margin: 0;
+
+      @media(min-width: $tablet) {
+
+      }
+
+      .menu-item{
+        padding: 2% 0;
+        margin-left: 5%;
+
+        @media(min-width: $tablet){
+          text-align: center;
+          margin-left: 0;
+        }
+
+        &:first-child{
+          margin-top: 5%;
+
+          @media(min-width: $tablet){
+            margin-top: 0;
+          }
+        }
+      }
+
+      &:last-child{
+        margin-bottom: 5%;
+
+        @media(min-width: $tablet){
+          margin-top: 0;
+        }
+      }
+
+      a {
+        color: white;
+        font-size: 18px;
+        font-family: $fonteSecondaireBold;
+
+        @media(min-width: $tablet){
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  &__desktop{
+    display: none;
+
+    @media(min-width: $tablet){
+      display: block;
+      margin-top: 10%;
+    }
+
+    .logo{
+      display: flex;
+      justify-content: center;
+
+      img{
+        width: 90%;
+      }
+    }
+
+    &__nav{
+      margin-top: 15%;
+
+    }
+  }
+
+  &__mobile{
+    display: none;
+
+    @media(max-width: calc(#{$tablet} - 1px)) {
+      display: block;
+    }
+
+    &__conteneur{
+      display: flex;
+      justify-content: space-around;
+      padding: 3% 0;
+
+      .logo{
+        width: 80%;
+        height: 100%;
+      }
+    }
+
+    &__nav {
+      position: absolute;
+      width: 100%;
+      transition: 0.5s ease-in-out;
+      background-color: #484848;
+      overflow: hidden;
+      max-height: 1000px;
+
+      &--ferme{
+        max-height: 0;
+        padding: 0;
+        //padding-left: 5%;
+      }
+    }
+  }
+
+  &__social{
+    display: none;
+
+    @media(min-width: $tablet){
+      display: flex;
+      justify-content: space-between;
+      padding: 0 8%;
+      margin-bottom: 20%;
+    }
+
+    @media(max-width: 1000px){
+      flex-direction: column;
+    }
+
+    @media(max-width: 782px){
+      margin-bottom: 40%;
+      padding: 0 6%;
+    }
+
+    a{
+      min-width: 32px;
+      max-width: 15%;
+
+      &:last-of-type{
+        max-width: 18%;
+      }
+
+      @media(max-width: 1000px){
+        margin: 0 auto;
+      }
+
+      img{
+        transition: 0.15s ease-in-out;
+        transform: scale(0.9);
+      }
+
+      &:hover{
+        img{
+          transform: scale(1.0);
+        }
+      }
+    }
+
+   &Mobile{
+     display: flex;
+     justify-content: space-between;
+     padding: 0 8%;
+     margin-bottom: 4%;
+
+     a{
+       min-width: 32px;
+       max-width: 15%;
+
+       &:last-of-type{
+         max-width: 18%;
+       }
+     }
+   }
+  }
+}

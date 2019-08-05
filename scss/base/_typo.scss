@@ -2,3 +2,48 @@
   @author Samuel Loranger <samuelloranger@gmail.com>
  */
 
+h1, h2, h3{
+  font-family: $fontePrimaire;
+}
+
+h1{
+   font-size: 34px;
+
+   @media(min-width: $tablet){
+     font-size: 38px;
+   }
+ }
+
+h2{
+  font-size: 30px;
+
+  @media(min-width: $tablet){
+    font-size: 24px;
+  }
+}
+
+h3{
+  font-size: 22px;
+
+  @media(min-width: $tablet){
+    font-size: 20px;
+  }
+}
+
+h4{
+  font-size: 18px;
+  font-family: $fonteSecondaireBold;
+}
+
+p, span, ul li, body{
+  font-size: 16px;
+  font-family: $fonteSecondaire;
+}
+
+a{
+  text-decoration: none;
+
+  &:hover{
+
+  }
+}

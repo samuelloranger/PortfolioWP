@@ -1,0 +1,54 @@
+.accueil{
+  h2{
+    margin-top: 12%;
+    text-align: center;
+
+    @media(min-width: $tablet){
+      text-align: left;
+      margin-top: 5%;
+      margin-left: 5%;
+    }
+
+    &:first-of-type{
+      margin-top: 2%;
+    }
+  }
+
+  &__projets{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8%;
+
+    @media(min-width: $tablet){
+      flex-direction: row;
+      margin-bottom: 0;
+    }
+
+    &:nth-child(2n){
+      @media(min-width: $tablet){
+        flex-direction: row-reverse;
+      }
+    }
+
+    &__image{
+      width: 100%;
+
+      @media(min-width: $tablet){
+        width: 50%;
+      }
+
+      img{
+        display: block;
+      }
+    }
+
+    &__description{
+      background-color: $palegrey;
+      padding: 0 2%;
+
+      @media(min-width: $tablet){
+        width: 46%;
+      }
+    }
+  }
+}

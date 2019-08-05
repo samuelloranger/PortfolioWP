@@ -1,0 +1,36 @@
+.conteneur{
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.contenuSite{
+  margin: 0 5%;
+
+  @media(min-width: $tablet){
+    transition: margin 0.15s ease-in-out;
+    width: 100%;
+    margin-left: 20%;
+    margin-right: 0;
+  }
+
+  @media(min-width: $desktop-large){
+    margin-left: 10%;
+  }
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  margin: 0 auto;
+  height: 100%;
+
+  @media(min-width: $tablet){
+    display: flex;
+  }
+}
+
+img{
+  max-width: 100%;
+}

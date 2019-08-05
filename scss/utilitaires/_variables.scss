@@ -2,37 +2,36 @@
   * @author Samuel Loranger <samuelloranger@gmail.com>
  **/
 
-@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Titan+One|Roboto');
 
 /** Polices de caractères **/
 @font-face {
-  font-family: 'alfaslabone-regular';
-  src: url("../../fonts/AlfaSlabOne-Regular.ttf") format("ttf");
+  font-family: 'titan_one';
+  src: url("../../assets/fonts/Titan_One/TitanOne-Regular.ttf") format("ttf");
 }
 
 @font-face {
   font-family: 'roboto-bold';
-  src: url("../../fonts/Roboto-Bold.ttf") format("ttf");
+  src: url("../../assets/fonts/Roboto/Roboto-Bold.ttf") format("ttf");
 }
 
 @font-face {
   font-family: 'roboto';
-  src: url("../../fonts/Roboto-Regular.ttf") format("ttf");
+  src: url("../../assets/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
 }
 
-$fontePrimaire: 'Alfa Slab One', alfaslabone-regular, Arial, sans-serif;
-
+$fontePrimaire: 'titan_one', titan_one, Arial, sans-serif;
 $fonteSecondaire: 'Roboto', roboto, Arial, sans-serif;
 $fonteSecondaireBold: 'Roboto', roboto-bold, Arial, sans-serif;
 
 /* Couleurs de base */
-//$gris: #F8F8F8;
-$gris: #E3E3E3;
-$vert: #62AE5A;
-$vertHover: #46833F;
-$vertFonce: #307e2e;
-$jaune: #E5D94B;
+$grey: #363636;
+$palegrey: #dedede;
+$cyan: #00b4a2;
+$orange: #f49701;
 
 /** Points de rupture **/
-$bureau : 600px;
+$tablet : 600px;
+$desktop : 850px;
+$desktop-large : 1600px;
 
