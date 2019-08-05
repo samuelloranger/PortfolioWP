@@ -56,6 +56,7 @@
                 <a href=""><img src="<?= $lienRacine; ?>assets/social/facebook.png"></a>
                 <a href=""><img src="<?= $lienRacine; ?>assets/social/twitter.png"></a>
                 <a href=""><img src="<?= $lienRacine; ?>assets/social/instagram.png"></a>
+                <a href=""><img src="<?= $lienRacine; ?>assets/social/github.png"></a>
                 <a href=""><img src="<?= $lienRacine; ?>assets/social/linkedin.png"></a>
             </div>
         </nav>
@@ -63,10 +64,11 @@
     <?php endif; ?>
 
     <div class="header__social">
-        <a href=""><img src="<?= $lienRacine; ?>assets/social/facebook.png"></a>
-        <a href=""><img src="<?= $lienRacine; ?>assets/social/twitter.png"></a>
-        <a href=""><img src="<?= $lienRacine; ?>assets/social/instagram.png"></a>
-        <a href=""><img src="<?= $lienRacine; ?>assets/social/linkedin.png"></a>
+        <a href=""><img src="<?= $lienRacine; ?>assets/social/facebook.png"><span>samuel.loranger</span></a>
+        <a href=""><img src="<?= $lienRacine; ?>assets/social/twitter.png"><span>@samuelloranger</span></a>
+        <a href=""><img src="<?= $lienRacine; ?>assets/social/instagram.png"><span>samuelloranger</span></a>
+        <a href=""><img src="<?= $lienRacine; ?>assets/social/github.png"><span>samuelloranger</span></a>
+        <a href=""><img src="<?= $lienRacine; ?>assets/social/linkedin.png"><span>Samuel&nbsp;Loranger</span></a>
     </div>
 </header>
 

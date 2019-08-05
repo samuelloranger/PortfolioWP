@@ -739,7 +739,7 @@ header ul li:before {
 @media (min-width: 600px) {
   .header__social {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 0 8%;
     margin-bottom: 20%;
   }
@@ -756,20 +756,27 @@ header ul li:before {
   }
 }
 .header__social a {
+  display: flex;
   min-width: 32px;
+  min-height: 32px;
+  margin-top: 5%;
   max-width: 15%;
-}
-.header__social a:last-of-type {
-  max-width: 18%;
-}
-@media (max-width: 1000px) {
-  .header__social a {
-    margin: 0 auto;
-  }
+  color: white;
 }
 .header__social a img {
   transition: 0.15s ease-in-out;
   transform: scale(0.9);
+  margin-right: 25%;
+  width: 100%;
+  height: 100%;
+}
+.header__social a span {
+  height: 100%;
+  margin-top: 7px;
+}
+.header__social a:last-of-type {
+  min-width: 35px;
+  min-height: 30px;
 }
 .header__social a:hover img {
   transform: scale(1);
@@ -782,10 +789,10 @@ header ul li:before {
 }
 .header__socialMobile a {
   min-width: 32px;
-  max-width: 15%;
+  max-width: 12%;
 }
 .header__socialMobile a:last-of-type {
-  max-width: 18%;
+  max-width: 15%;
 }
 
 .accueil h2 {
