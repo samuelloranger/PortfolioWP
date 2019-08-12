@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @author Samuel Loranger <samuelloranger@gmail.com>
+ */
 /* Ajout d'un emplacement de menu */
 if(function_exists("register_nav_menus")){
     register_nav_menus(
@@ -8,32 +10,6 @@ if(function_exists("register_nav_menus")){
         )
     );
 
-}
-
-/* Ajout de l'utilisation de la sidebar par défaut */
-if(function_exists("register_sidebar")) {
-    register_sidebar(
-        array(
-            "id"                => "footer_gauche",
-            "name"              => "Footer gauche",
-            "description"       => "",
-            "before_widget"     => "",
-            "after_widget"     => "",
-            "before_title"     => "<h3>",
-            "after_title"     => "</h3>",
-        )
-    );
-    register_sidebar(
-        array(
-            "id"                => "footer_droite",
-            "name"              => "Footer droite",
-            "description"       => "",
-            "before_widget"     => "",
-            "after_widget"     => "",
-            "before_title"     => "<h3>",
-            "after_title"     => "</h3>",
-        )
-    );
 }
 
 /* Création post la page projets */
@@ -78,6 +54,8 @@ function projets_custom_post()
 //Écouteur nouvelles
 add_action('init', 'projets_custom_post', 0);
 
+
+
 //********************************************************************************
 
 //Fonction qui liste les pages existantes pour en créer un menu déroulant
@@ -112,34 +90,217 @@ if( class_exists( 'WP_Customize_Control' ) ):
     }
 endif;
 
+
+
 function theme_customize_register($wp_customize){
 
-    $wp_customize->add_section('liens_reseaux_sociaux', array(
-        'title'    => __('Personnalisation du thème', 'samuelloranger'),
+    $wp_customize->add_section('social_links', array(
+        'title'    => __('Liens réseaux sociaux', 'samuelloranger'),
         'description' => 'Définie les liens des réseaux sociaux du thème',
         'priority' => 1,
     ));
 
     /*
-     * Lien Twitter
+     * Lien Facebook
      */
-    $wp_customize->add_setting('twitter', array(
-        'capability'     => 'edit_theme_options',
-        'type'           => 'option',
+    $wp_customize->add_setting( 'facebook', array(
+        'default' => '',
+        'transport' => 'refresh',
     ));
 
-    $wp_customize->add_control('liens_reseaux_sociaux', array(
-        'label'      => __('Lien Twitter', 'samuelloranger'),
-        'section'    => 'liens_reseaux_sociaux',
-        'settings'   => 'twitter',
+    $wp_customize->add_control( 'facebook', array(
+        'label' => __( 'Nom Facebook' ),
+        'description' => "<b>Exemple</b>: bill-gates",
+        'section' => 'social_links',
+    ));
+
+    $wp_customize->add_setting('link_facebook', array(
+        'capability'     => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'link_facebook', array(
+        'label'      => ( 'URL Facebook' ),
+        'description' => "<b>Exemple</b>: https://www.facebook.com/BillGates",
+        'section'    => 'social_links',
+    )));
+
+
+    //Checkbox facebook
+    $wp_customize->add_setting('social_show_facebook', array(
+        'default' => 0,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( 'social_show_facebook', array(
+        'label' => __( 'Montrer le lien Facebook', 'social_show_facebook' ),
+        'section'  => 'social_links',
+        'type'=> 'checkbox',
+        'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+    ));
+
+    /*
+    * Lien Twitter
+    */
+    $wp_customize->add_setting( 'twitter', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( 'twitter', array(
+        'label' => __( 'Nom Twitter' ),
+        'description' => "<b>Exemple</b>: @billgates",
+        'section' => 'social_links',
+    ));
+
+    $wp_customize->add_setting('link_twitter', array(
+        'capability'     => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'link_twitter', array(
+        'label'      => __('URL Twitter', 'link_twitter'),
+        'description' => "<b>Exemple</b>: https://twitter.com/billgates",
+        'section'    => 'social_links'
+    )));
+
+    //Checkbox Twitter
+    $wp_customize->add_setting('social_show_twitter', array(
+        'default' => 0,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( 'social_show_twitter', array(
+        'label' => __( 'Montrer le lien Twitter', 'social_show_twitter' ),
+        'section'  => 'social_links',
+        'type'=> 'checkbox',
+        'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+    ));
+
+    /*
+    * Lien Instagram
+    */
+    $wp_customize->add_setting( 'instagram', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( 'instagram', array(
+        'label' => __( 'Nom Instagram' ),
+        'description' => "<b>Exemple</b>: thisisbillgates",
+        'section' => 'social_links',
+    ));
+
+    $wp_customize->add_setting('link_instagram', array(
+        'capability'     => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'link_instagram', array(
+        'label'      => __('Lien Instagram', 'link_instagram'),
+        'description' => "<b>Exemple</b>: https://www.instagram.com/thisisbillgates",
+        'section'    => 'social_links'
+    )));
+
+
+    //Checkbox Instagram
+    $wp_customize->add_setting('social_show_instagram', array(
+        'default' => 0,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( 'social_show_instagram', array(
+        'label' => __( 'Montrer le lien Instagram', 'social_show_instagram' ),
+        'section'  => 'social_links',
+        'type'=> 'checkbox',
+        'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+    ));
+
+    /*
+    * Lien Github
+    */
+    $wp_customize->add_setting( 'github', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( 'github', array(
+        'label' => __( 'Nom Github' ),
+        'description' => "<b>Exemple</b>: bill-gates",
+        'section' => 'social_links',
+    ));
+
+    $wp_customize->add_setting('link_github', array(
+        'capability'     => 'edit_theme_options',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'link_github', array(
+        'label'      => __('URL Github', 'link_github'),
+        'description' => "<b>Exemple</b>: https://github.com/bill-gates",
+        'section'    => 'social_links'
+    )));
+
+    //Checkbox Hithub
+    $wp_customize->add_setting('social_show_github', array(
+        'default' => 0,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( 'social_show_github', array(
+        'label' => __( 'Montrer le GitHub', 'social_show_github' ),
+        'section'  => 'social_links',
+        'type'=> 'checkbox',
+        'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+    ));
+
+
+    /*
+    * Lien LinkedIn
+    */
+    $wp_customize->add_setting('linkedin', array(
+        'capability'     => 'edit_theme_options',
+        'transport' => 'refresh'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'linkedin', array(
+        'label'      => __('Nom LinkedIn', 'linkedin'),
+        'description' => "<b>Exemple</b>: Bill Gates",
+        'section'    => 'social_links'
+    )));
+
+    $wp_customize->add_setting('link_linkedin', array(
+        'capability'     => 'edit_theme_options',
+        'transport' => 'refresh'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'link_linkedin', array(
+        'label'      => __('Lien LinkedIn', 'link_linkedin'),
+        'description' => "<b>Exemple</b>: https://www.linkedin.com/in/williamhgates/",
+        'section'    => 'social_links'
+    )));
+
+    //Checkbox LinkedIn
+    $wp_customize->add_setting('social_show_linkedin', array(
+        'default' => 0,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( 'social_show_linkedin', array(
+        'label' => __( 'Montrer le lien LinkedIn', 'social_show_linkedin' ),
+        'section'  => 'social_links',
+        'type'=> 'checkbox',
+        'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
     ));
 }
 
-add_action('customize_register', 'theme_customize_register');
 
+add_action('customize_register', 'theme_customize_register');
 
 //Ajoute une clase sur l'item de menu actif
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+
 
 function special_nav_class ($classes, $item) {
     if (in_array('current-menu-item', $classes) ){
@@ -149,12 +310,9 @@ function special_nav_class ($classes, $item) {
 }
 
 
+
 add_image_size("thumbnail@2x", 320, 180);
 add_image_size("medium@2x", 640, 360);
 add_image_size("large@2x", 1280, 750);
 add_theme_support('post-thumbnails');
-
-@ini_set( 'upload_max_size' , '64M' );
-@ini_set( 'post_max_size', '64M');
-@ini_set( 'max_execution_time', '300' );
 ?>

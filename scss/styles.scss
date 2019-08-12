@@ -1,6 +1,9 @@
+@charset "UTF-8";
+
 /**
   @author Samuel Loranger <samuelloranger@gmail.com>
  */
+
 
 /**
  * ------------------
@@ -30,10 +33,13 @@ $hamburger-types : (spin);
 @import "base/typo";
 @import "base/boutons";
 @import "base/general";
+@import "base/404";
+
 
 /****** Modules ******/
 @import "modules/header";
 @import "modules/accueil";
+@import "modules/article";
 @import "modules/footer";
 
 /****** Grille ******/

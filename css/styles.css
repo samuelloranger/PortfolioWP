@@ -548,7 +548,7 @@ th {
   @author Samuel Loranger <samuelloranger@gmail.com>
  */
 h1, h2, h3 {
-  font-family: "titan_one", titan_one, Arial, sans-serif;
+  font-family: "Titan One", titan_one, Arial, sans-serif;
 }
 
 h1 {
@@ -591,6 +591,10 @@ p, span, ul li, body {
 a {
   text-decoration: none;
 }
+
+main a {
+  color: #0c36c8;
+}
 /**
  * @author Samuel Loranger <samuelloranger@gmail.com>
  */
@@ -622,6 +626,10 @@ header ul li:before {
   display: none;
 }
 
+.erreur404 h1, .erreur404 h2 {
+  margin-left: 3%;
+}
+
 /****** Modules ******/
 /**
   @author Samuel Loranger <samuelloranger@gmail.com>
@@ -639,6 +647,7 @@ header ul li:before {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
   }
 }
 @media (min-width: 1600px) {
@@ -649,13 +658,17 @@ header ul li:before {
 .header .menu-menu-principal-container .menu {
   margin: 0;
 }
+@media (min-width: 600px) {
+  .header .menu-menu-principal-container .menu {
+    padding-left: 5%;
+  }
+}
 .header .menu-menu-principal-container .menu .menu-item {
   padding: 2% 0;
-  margin-left: 5%;
+  margin: 5% 0;
 }
 @media (min-width: 600px) {
   .header .menu-menu-principal-container .menu .menu-item {
-    text-align: center;
     margin-left: 0;
   }
 }
@@ -666,6 +679,13 @@ header ul li:before {
   .header .menu-menu-principal-container .menu .menu-item:first-child {
     margin-top: 0;
   }
+}
+.header .menu-menu-principal-container .menu .menu-item a {
+  transition: 0.15s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+.header .menu-menu-principal-container .menu .menu-item a:hover {
+  border-bottom: 2px solid white;
 }
 .header .menu-menu-principal-container .menu:last-child {
   margin-bottom: 5%;
@@ -699,7 +719,7 @@ header ul li:before {
   justify-content: center;
 }
 .header__desktop .logo img {
-  width: 90%;
+  width: 50%;
 }
 .header__desktop__nav {
   margin-top: 15%;
@@ -714,11 +734,11 @@ header ul li:before {
 }
 .header__mobile__conteneur {
   display: flex;
-  justify-content: space-around;
-  padding: 3% 0;
+  justify-content: space-between;
+  padding: 0 5%;
 }
 .header__mobile__conteneur .logo {
-  width: 80%;
+  width: 20%;
   height: 100%;
 }
 .header__mobile__nav {
@@ -736,12 +756,25 @@ header ul li:before {
 .header__social {
   display: none;
 }
+.header__socialMobile {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8%;
+  margin-bottom: 4%;
+}
+.header__socialMobile a {
+  min-width: 32px;
+  max-width: 12%;
+}
+.header__socialMobile a:last-of-type {
+  max-width: 15%;
+}
 @media (min-width: 600px) {
   .header__social {
     display: flex;
     flex-direction: column;
-    padding: 0 8%;
-    margin-bottom: 20%;
+    padding: 0 5%;
+    margin-bottom: 25%;
   }
 }
 @media (max-width: 1000px) {
@@ -751,7 +784,6 @@ header ul li:before {
 }
 @media (max-width: 782px) {
   .header__social {
-    margin-bottom: 40%;
     padding: 0 6%;
   }
 }
@@ -774,6 +806,19 @@ header ul li:before {
   height: 100%;
   margin-top: 7px;
 }
+.header__social a span::after {
+  display: block;
+  height: 0px;
+  width: 100%;
+  content: "";
+  background-color: white;
+  transition: 0.15s ease-in-out;
+}
+@media (max-width: 1100px) {
+  .header__social a span {
+    display: none;
+  }
+}
 .header__social a:last-of-type {
   min-width: 35px;
   min-height: 30px;
@@ -781,20 +826,13 @@ header ul li:before {
 .header__social a:hover img {
   transform: scale(1);
 }
-.header__socialMobile {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 8%;
-  margin-bottom: 4%;
-}
-.header__socialMobile a {
-  min-width: 32px;
-  max-width: 12%;
-}
-.header__socialMobile a:last-of-type {
-  max-width: 15%;
+.header__social a:hover span:after {
+  height: 2px;
 }
 
+/**
+  @author Samuel Loranger <samuelloranger@gmail.com>
+ */
 .accueil h2 {
   margin-top: 12%;
   text-align: center;
@@ -803,11 +841,88 @@ header ul li:before {
   .accueil h2 {
     text-align: left;
     margin-top: 5%;
-    margin-left: 5%;
+    margin-left: 2%;
   }
 }
 .accueil h2:first-of-type {
   margin-top: 2%;
+}
+@media (min-width: 600px) {
+  .accueil__description {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4%;
+    margin-top: 3%;
+  }
+}
+@media (min-width: 600px) {
+  .accueil__description__infos {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 50%;
+  }
+}
+@media (min-width: 600px) {
+  .accueil__description__infos h1 {
+    margin-top: 0;
+  }
+}
+.accueil__description__infos h2 {
+  margin-left: 0;
+}
+.accueil__description__image {
+  transition: 0.15s ease-in-out;
+  margin-bottom: 5%;
+  position: relative;
+}
+@media (min-width: 600px) {
+  .accueil__description__image {
+    width: 32%;
+  }
+}
+@media (min-width: 1000px) {
+  .accueil__description__image {
+    width: 25%;
+  }
+}
+.accueil__description__image img {
+  display: block;
+}
+.accueil__talents {
+  margin-top: 10%;
+}
+@media (min-width: 600px) {
+  .accueil__talents {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0;
+    padding: 2%;
+  }
+}
+.accueil__talents__talent {
+  margin-bottom: 5%;
+}
+@media (min-width: 600px) {
+  .accueil__talents__talent {
+    margin-bottom: 5%;
+    width: 25%;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+    padding: 2%;
+    max-width: 350px;
+  }
+}
+.accueil__talents__talent img {
+  width: 45%;
+  display: block;
+  margin: 5% auto 10% auto;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.4));
+}
+.accueil__talents__talent h2 {
+  margin-top: 5%;
+  margin-left: 0;
+  text-align: center;
 }
 .accueil__projets {
   display: flex;
@@ -820,13 +935,24 @@ header ul li:before {
     margin-bottom: 0;
   }
 }
+.accueil__projets .color-gradiant {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-image: linear-gradient(red, yellow);
+}
 @media (min-width: 600px) {
   .accueil__projets:nth-child(2n) {
     flex-direction: row-reverse;
   }
 }
+.accueil__projets:nth-child(2n) .color-gradiant {
+  background-image: linear-gradient(violet, blue);
+}
 .accueil__projets__image {
   width: 100%;
+  position: relative;
 }
 @media (min-width: 600px) {
   .accueil__projets__image {
@@ -835,25 +961,80 @@ header ul li:before {
 }
 .accueil__projets__image img {
   display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .accueil__projets__description {
   background-color: #dedede;
   padding: 0 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 @media (min-width: 600px) {
   .accueil__projets__description {
     width: 46%;
   }
 }
+/**
+  @author Samuel Loranger <samuelloranger@gmail.com>
+ */
+.article {
+  overflow: hidden;
+}
+.article__image {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: -1;
+}
+@media (min-width: 600px) {
+  .article__image {
+    margin-top: 0;
+  }
+}
+@media (min-width: 800px) {
+  .article__image {
+    margin-top: 2%;
+  }
+}
+.article__image img {
+  display: block;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+.article__image__background-fix {
+  position: absolute;
+  z-index: -2;
+  top: 70%;
+  display: block;
+  background-color: #dedede;
+  width: 100%;
+  height: 100%;
+}
+.article__contenu {
+  background-color: #dedede;
+  padding: 0 2% 3% 2%;
+}
+.article__contenu h1 {
+  text-align: center;
+}
 
+/**
+  @author Samuel Loranger <samuelloranger@gmail.com>
+ */
 .footer__credits {
-  margin-bottom: 4%;
+  margin-bottom: 2%;
 }
 .footer__credits p {
   text-align: center;
 }
 
 /****** Grille ******/
+/**
+  @author Samuel Loranger <samuelloranger@gmail.com>
+ */
 .conteneur {
   margin: 0 auto;
   max-width: 1000px;

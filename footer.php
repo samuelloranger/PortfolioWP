@@ -1,7 +1,10 @@
-<?php $lienRacine = "" . get_site_url() . "/wp-content/themes/samuelloranger/"; ?>
+<?php
+/**
+* @author Samuel Loranger <samuelloranger@gmail.com>
+*/
+?>
 
-
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="footer__contenu conteneur">
 
             <?php
@@ -23,14 +26,14 @@
         </div>
 
         <div class="footer__credits">
-            <p><small><a href="https://www.linkedin.com/in/samuel-loranger-b23205174/">Samuel Loranger</a>&nbsp;|&nbsp;2019 Tous droits réservés</small></p>
+            <p><small>Samuel Loranger&nbsp;|&nbsp;2019 Tous droits réservés</small></p>
         </div>
     </footer>
 
 
     <?php wp_footer(); ?>
 
-    <script type="text/javascript" src="<?php echo $lienRacine; ?>scripts/menu.js"></script>
+    <script type="text/javascript" src="<?= get_template_directory_uri(); ?>/scripts/menu.js"></script>
     </div> <!-- fermeture de la boîte #contenu -->
     </body>
 </html>

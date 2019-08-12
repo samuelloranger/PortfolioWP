@@ -1,5 +1,9 @@
-
-<!doctype html>
+<?php
+/**
+ * @author Samuel Loranger <samuelloranger@gmail.com>
+ */
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <title>
@@ -9,18 +13,18 @@
         <?php else : ?>
             &mdash; <?php wp_title("", true); ?>
         <?php endif; ?>
+
     </title>
-
-    <?php $lienRacine = "" . get_site_url() . "/wp-content/themes/samuelloranger/"; ?>
-
+    <meta name="author" content="Samuel Loranger">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Wordpress, Développemenr Web, Développeur, Intégrateur, ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="theme-color" content="#000000">
-    <link rel="stylesheet" href="<?php echo $lienRacine; ?>css/styles.css"/>
-    <!--    <link rel="stylesheet" href="--><?php //echo $lienRacine; ?><!--css/styles.min.css"/>-->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/styles.css"/>
+<!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/css/styles.min.css"/>-->
     <?php wp_head(); ?>
 
 </head>
-<body <?php  body_class(); ?>>
+<body <?php body_class(); ?>>
 
 
 <header id="en-tete" class="header">
@@ -28,7 +32,7 @@
 
     <div class="header__desktop">
         <div class="logo">
-            <img src="<?= $lienRacine?>assets/sl-logo.png" class="">
+            <img src="<?= get_template_directory_uri();?>/assets/sl-logo.svg" alt="Logo de Samuel Loranger" class="">
         </div>
         <?php if(has_nav_menu('principal')) : ?>
             <nav id="principal" class="header__desktop__nav">
@@ -40,9 +44,9 @@
     <?php if(has_nav_menu('principal')) : ?>
     <div class="header__mobile">
         <div class="header__mobile__conteneur">
-            <img src="<?= $lienRacine?>assets/sl-logo.png" class="logo">
+            <img src="<?= get_template_directory_uri();?>/assets/sl-logo.svg" alt="Logo de Samuel Loranger" class="logo">
 
-            <button id="btnMenu" class=" hamburger hamburger--spin" type="button" aria-label="Menu" aria-controls="navigation">
+            <button id="btnMenu" class=" hamburger hamburger--spin" type="button" aria-label="Menu">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>
@@ -53,22 +57,75 @@
             <?php wp_nav_menu( array('theme_location' => 'principal'));?>
 
             <div class="header__socialMobile">
-                <a href=""><img src="<?= $lienRacine; ?>assets/social/facebook.png"></a>
-                <a href=""><img src="<?= $lienRacine; ?>assets/social/twitter.png"></a>
-                <a href=""><img src="<?= $lienRacine; ?>assets/social/instagram.png"></a>
-                <a href=""><img src="<?= $lienRacine; ?>assets/social/github.png"></a>
-                <a href=""><img src="<?= $lienRacine; ?>assets/social/linkedin.png"></a>
+                <?php if(get_theme_mod( 'social_show_facebook', false) == "true"){ ?>
+                    <a href="<?= get_theme_mod( 'link_facebook'); ?>">
+                        <img src="<?= get_template_directory_uri(); ?>/assets/social/facebook.png" alt="Lien Facebook">
+                    </a>
+                <?php } ?>
+
+                <?php if(get_theme_mod( 'social_show_twitter', false) == "true"){ ?>
+                    <a href="<?= get_theme_mod( 'link_twitter'); ?>">
+                        <img src="<?= get_template_directory_uri(); ?>/assets/social/twitter.png" alt="Lien Twitter">
+                    </a>
+                <?php } ?>
+
+                <?php if(get_theme_mod( 'social_show_instagram', false) == "true"){ ?>
+                    <a href="<?= get_theme_mod( 'link_instagram'); ?>">
+                        <img src="<?= get_template_directory_uri(); ?>/assets/social/instagram.png" alt="Lien Instagram">
+                    </a>
+                <?php } ?>
+
+                <?php if(get_theme_mod( 'social_show_github', false) == "true"){ ?>
+                    <a href="<?= get_theme_mod("link_github"); ?>">
+                        <img src="<?= get_template_directory_uri(); ?>/assets/social/github.png" alt="Lien GitHub">
+                    </a>
+                <?php } ?>
+
+                <?php if(get_theme_mod( 'social_show_linkedin', false) == "true"){ ?>
+                    <a href="<?= get_theme_mod( 'link_linkedin'); ?>">
+                        <img src="<?= get_template_directory_uri(); ?>/assets/social/linkedin.png" alt="Lien LinkedIn">
+                    </a>
+                <?php } ?>
             </div>
         </nav>
     </div>
     <?php endif; ?>
 
     <div class="header__social">
-        <a href=""><img src="<?= $lienRacine; ?>assets/social/facebook.png"><span>samuel.loranger</span></a>
-        <a href=""><img src="<?= $lienRacine; ?>assets/social/twitter.png"><span>@samuelloranger</span></a>
-        <a href=""><img src="<?= $lienRacine; ?>assets/social/instagram.png"><span>samuelloranger</span></a>
-        <a href=""><img src="<?= $lienRacine; ?>assets/social/github.png"><span>samuelloranger</span></a>
-        <a href=""><img src="<?= $lienRacine; ?>assets/social/linkedin.png"><span>Samuel&nbsp;Loranger</span></a>
+        <?php if(get_theme_mod( 'social_show_facebook', false) == "true"){ ?>
+            <a href="<?= get_theme_mod( 'link_facebook'); ?>">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/facebook.png" alt="Lien Facebook">
+                <span><?= get_theme_mod( 'facebook'); ?></span>
+            </a>
+        <?php } ?>
+
+        <?php if(get_theme_mod( 'social_show_twitter', false) == "true"){ ?>
+            <a href="<?= get_theme_mod( 'link_twitter'); ?>">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/twitter.png" alt="Lien Twitter">
+                <span><?= get_theme_mod( 'twitter'); ?></span>
+            </a>
+        <?php } ?>
+
+        <?php if(get_theme_mod( 'social_show_instagram', false) == "true"){ ?>
+            <a href="<?= get_theme_mod( 'link_instagram'); ?>">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/instagram.png" alt="Lien Instagram">
+                <span><?= get_theme_mod( 'instagram'); ?></span>
+            </a>
+        <?php } ?>
+
+        <?php if(get_theme_mod( 'social_show_github', false) == "true"){ ?>
+            <a href="<?= get_theme_mod("link_github"); ?>">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/github.png" alt="Lien GitHub">
+                <span><?= get_theme_mod("github"); ?></span>
+            </a>
+        <?php } ?>
+
+        <?php if(get_theme_mod( 'social_show_linkedin', false) == "true"){ ?>
+            <a href="<?= get_theme_mod( 'link_linkedin'); ?>">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/linkedin.png" alt="Lien LinkedIn">
+                <span><?= get_theme_mod( 'linkedin'); ?></span>
+            </a>
+        <?php } ?>
     </div>
 </header>
 

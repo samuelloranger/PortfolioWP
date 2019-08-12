@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
   }
 
   @media(min-width: $desktop-large){
@@ -25,15 +26,14 @@
       margin: 0;
 
       @media(min-width: $tablet) {
-
+        padding-left: 5%;
       }
 
       .menu-item{
         padding: 2% 0;
-        margin-left: 5%;
+        margin: 5% 0;
 
         @media(min-width: $tablet){
-          text-align: center;
           margin-left: 0;
         }
 
@@ -42,6 +42,15 @@
 
           @media(min-width: $tablet){
             margin-top: 0;
+          }
+        }
+
+        a{
+          transition: 0.15s ease-in-out;
+          border-bottom: 2px solid transparent;
+
+          &:hover{
+            border-bottom: 2px solid white;
           }
         }
       }
@@ -79,13 +88,12 @@
       justify-content: center;
 
       img{
-        width: 90%;
+        width: 50%;
       }
     }
 
     &__nav{
       margin-top: 15%;
-
     }
   }
 
@@ -98,11 +106,11 @@
 
     &__conteneur{
       display: flex;
-      justify-content: space-around;
-      padding: 3% 0;
+      justify-content: space-between;
+      padding: 0 5%;
 
       .logo{
-        width: 80%;
+        width: 20%;
         height: 100%;
       }
     }
@@ -118,7 +126,6 @@
       &--ferme{
         max-height: 0;
         padding: 0;
-        //padding-left: 5%;
       }
     }
   }
@@ -126,11 +133,27 @@
   &__social{
     display: none;
 
+    &Mobile{
+      display: flex;
+      justify-content: space-between;
+      padding: 0 8%;
+      margin-bottom: 4%;
+
+      a{
+        min-width: 32px;
+        max-width: 12%;
+
+        &:last-of-type{
+          max-width: 15%;
+        }
+      }
+    }
+
     @media(min-width: $tablet){
       display: flex;
       flex-direction: column;
-      padding: 0 8%;
-      margin-bottom: 20%;
+      padding: 0 5%;
+      margin-bottom: 25%;
     }
 
     @media(max-width: 1000px){
@@ -138,7 +161,6 @@
     }
 
     @media(max-width: 782px){
-      margin-bottom: 40%;
       padding: 0 6%;
     }
 
@@ -161,6 +183,19 @@
       span{
         height: 100%;
         margin-top: 7px;
+
+        &::after{
+          display: block;
+          height: 0px;
+          width: 100%;
+          content: "";
+          background-color: white;
+          transition: 0.15s ease-in-out;
+        }
+
+        @media(max-width: 1100px){
+          display: none;
+        }
       }
 
       &:last-of-type{
@@ -172,23 +207,13 @@
         img{
           transform: scale(1.0);
         }
+
+        span{
+          &:after{
+            height: 2px;
+          }
+        }
       }
     }
-
-   &Mobile{
-     display: flex;
-     justify-content: space-between;
-     padding: 0 8%;
-     margin-bottom: 4%;
-
-     a{
-       min-width: 32px;
-       max-width: 12%;
-
-       &:last-of-type{
-         max-width: 15%;
-       }
-     }
-   }
   }
 }
