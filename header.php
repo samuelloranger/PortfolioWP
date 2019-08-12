@@ -32,7 +32,7 @@
 
     <div class="header__desktop">
         <div class="logo">
-            <img src="<?= get_template_directory_uri();?>/assets/sl-logo.svg" alt="Logo de Samuel Loranger" class="">
+            <img src="<?= get_template_directory_uri();?>/assets/sl-logo.png" alt="Logo de Samuel Loranger" class="">
         </div>
         <?php if(has_nav_menu('principal')) : ?>
             <nav id="principal" class="header__desktop__nav">
@@ -44,7 +44,7 @@
     <?php if(has_nav_menu('principal')) : ?>
     <div class="header__mobile">
         <div class="header__mobile__conteneur">
-            <img src="<?= get_template_directory_uri();?>/assets/sl-logo.svg" alt="Logo de Samuel Loranger" class="logo">
+            <img src="<?= get_template_directory_uri();?>/assets/sl-logo.png" alt="Logo de Samuel Loranger" class="logo">
 
             <button id="btnMenu" class=" hamburger hamburger--spin" type="button" aria-label="Menu">
                 <span class="hamburger-box">

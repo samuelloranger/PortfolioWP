@@ -33,7 +33,7 @@
 
     <?php wp_footer(); ?>
 
-    <script type="text/javascript" src="<?= get_template_directory_uri(); ?>/scripts/menu.js"></script>
+    <script type="text/javascript" src="<?= get_template_directory_uri(); ?>/scripts/menu.min.js"></script>
     </div> <!-- fermeture de la boîte #contenu -->
     </body>
 </html>

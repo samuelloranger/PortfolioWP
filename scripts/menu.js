@@ -1,3 +1,7 @@
+/**
+ * Fonction javascript qui ouvre et ferme le menu mobile
+ */
+
 function gererMenu(){
     //On va chercher le btnMenu
     const btnMenu = document.getElementById("btnMenu");

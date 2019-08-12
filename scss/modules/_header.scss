@@ -24,10 +24,7 @@
   .menu-menu-principal-container {
     .menu {
       margin: 0;
-
-      @media(min-width: $tablet) {
-        padding-left: 5%;
-      }
+      padding-left: 5%;
 
       .menu-item{
         padding: 2% 0;
@@ -102,6 +99,10 @@
 
     @media(max-width: calc(#{$tablet} - 1px)) {
       display: block;
+      position: fixed;
+      width: 100%;
+      background-color: $grey;
+      z-index: 1;
     }
 
     &__conteneur{
@@ -112,6 +113,10 @@
       .logo{
         width: 20%;
         height: 100%;
+      }
+
+      img{
+        max-width: 70px;
       }
     }
 

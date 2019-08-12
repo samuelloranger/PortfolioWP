@@ -14,7 +14,7 @@ get_header(); ?>
         </div>
 
         <div class="accueil__description__image">
-            <img src="<?php echo get_template_directory_uri(); ?>//assets/samlo.png" alt="Photo de <?= get_bloginfo("name"); ?>">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/samlo.png" alt="Photo de <?= get_bloginfo("name"); ?>">
         </div>
     </div>
 
@@ -55,7 +55,9 @@ get_header(); ?>
                     <?php $image = get_field('image'); ?>
 
                     <div class="accueil__projets__image">
-                        <img src="<?php echo $image['url']; ?>" alt="Image du projet : <?= get_field("nom_service");?>" />
+                        <a href="<?= get_permalink(); ?>">
+                            <img src="<?php echo $image['url']; ?>" alt="Image du projet : <?= get_field("nom_service");?>" />
+                        </a>
                     </div>
 
                     <div class="accueil__projets__description">
@@ -63,7 +65,7 @@ get_header(); ?>
                             <h3 class="accueil__projets__titre"><?= the_title(); ?></h3>
                             <p><?= get_field("description_courte");?></p>
                         </div>
-                        <p><a href="<?= get_permalink(); ?>" aria-label="Consulter plus d'informations concernant le projet <?= the_title(); ?>">Consulter le projet</a></p>
+                        <a class="accueil__projets__description--btn" href="<?= get_permalink(); ?>" aria-label="Consulter plus d'informations concernant le projet <?= the_title(); ?>">Consulter le projet</a>
                     </div>
                 </div>
             <?php } ?>
