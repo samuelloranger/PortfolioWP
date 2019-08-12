@@ -9,8 +9,10 @@
 
 .contenuSite{
   margin: 0 5%;
+  padding-top: 72px;
 
   @media(min-width: $tablet){
+    padding-top: 0;
     transition: margin 0.15s ease-in-out;
     width: 100%;
     margin-left: 20%;

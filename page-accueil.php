@@ -97,7 +97,7 @@ get_header(); ?>
                             <h3 class="accueil__projets__titre"><?= the_title(); ?></h3>
                             <?= get_field("description_courte");?>
                         </div>
-                        <p><a href="<?= get_permalink(); ?>" aria-label="Consulter plus d'informations concernant le projet <?= the_title(); ?>" >Consulter le projet</a></p>
+                        <a class="accueil__projets__description--btn" href="<?= get_permalink(); ?>" aria-label="Consulter plus d'informations concernant le projet <?= the_title(); ?>" >Consulter le projet</a>
                     </div>
                 </div>
             <?php } ?>
