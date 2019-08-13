@@ -2,4 +2,52 @@
  * @author Samuel Loranger <samuelloranger@gmail.com>
  */
 
-// Styles généraux pour les boutons
+.btnElement{
+  display: flex;
+  justify-content: center;
+  width: 65%;
+  margin: 0 auto 6% auto;
+  border-radius: 6px;
+  padding: 3px 0px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+  border: 0;
+  transition: 0.15s ease-in-out;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+
+  span{
+    margin-top: 8px;
+  }
+
+  @media(min-width: $tablet){
+    margin: 0 0 6% 0;
+    max-width: 150px;
+  }
+
+  @media(min-width: 785px){
+    width: 50%;
+    max-width: 165px;
+  }
+
+  &:hover{
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.6);
+    transform: scale(1.02);
+  }
+
+  &--orange{
+    color: white;
+    background-color: #f49701;
+  }
+}
+
+.btnConsulter{
+  &:before{
+    display: inline-block;
+    content: " ";
+    width: 32px;
+    height: 32px;
+    background-image: url("../assets/icons/view.svg");
+    margin-right: 5px;
+  }
+}
