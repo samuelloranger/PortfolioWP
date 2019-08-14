@@ -31,8 +31,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/styles.css"/>
-<!--    <link rel="stylesheet" href="--><?//= get_template_directory_uri(); ?><!--/css/styles.min.css"/>-->
+<!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/css/styles.css"/>-->
+    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/styles.min.css"/>
     <?php wp_head(); ?>
 
 </head>

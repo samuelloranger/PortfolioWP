@@ -5,49 +5,80 @@
 .btnElement{
   display: flex;
   justify-content: center;
-  width: 65%;
+  min-width: 215px;
   margin: 0 auto 6% auto;
   border-radius: 6px;
   padding: 3px 0px;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
   border: 0;
   transition: 0.15s ease-in-out;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
   text-align: center;
   text-transform: uppercase;
   font-weight: bolder;
 
+  &Primaire{
+    &--orange{
+      color: white;
+      background-color: #f49701;
+    }
+  }
+
+  &Secondaire{
+    &--orange{
+      color: #f49701;
+      background-color: transparent;
+      border: 2px solid #f49701;
+    }
+  }
+
   span{
-    margin-top: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+    @media(min-width: 416px){
+      margin-top: 12px;
+    }
+
+    @media(min-width: 600px){
+      margin-top: 8px;
+    }
   }
 
   @media(min-width: $tablet){
-    margin: 0 0 6% 0;
-    max-width: 150px;
-  }
-
-  @media(min-width: 785px){
-    width: 50%;
-    max-width: 165px;
+    max-width: 180px;
   }
 
   &:hover{
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.6);
-    transform: scale(1.02);
   }
 
-  &--orange{
-    color: white;
-    background-color: #f49701;
-  }
+
 }
 
-.btnConsulter{
+.btnIcone{
   &:before{
     display: inline-block;
     content: " ";
-    width: 32px;
-    height: 32px;
-    background-image: url("../assets/icons/view.svg");
-    margin-right: 5px;
+    min-width: 32px;
+    min-height: 32px;
+    margin: 5px;
+    background-repeat: no-repeat;
+
+    @media(min-width: 600px){
+      margin: 0px 6px 0px 0px;
+    }
+  }
+
+  &--consulter{
+    &:before{
+      background-image: url("../assets/icons/view.svg");
+    }
+  }
+
+  &--github{
+    &:before {
+      background-size: contain;
+      background-image: url("../assets/icons/github--orange.png");
+    }
   }
 }

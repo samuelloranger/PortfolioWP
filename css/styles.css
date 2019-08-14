@@ -598,6 +598,73 @@ main a {
 /**
  * @author Samuel Loranger <samuelloranger@gmail.com>
  */
+.btnElement {
+  display: flex;
+  justify-content: center;
+  min-width: 215px;
+  margin: 0 auto 6% auto;
+  border-radius: 6px;
+  padding: 3px 0px;
+  border: 0;
+  transition: 0.15s ease-in-out;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.btnElementPrimaire--orange {
+  color: white;
+  background-color: #f49701;
+}
+.btnElementSecondaire--orange {
+  color: #f49701;
+  background-color: transparent;
+  border: 2px solid #f49701;
+}
+.btnElement span {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+@media (min-width: 416px) {
+  .btnElement span {
+    margin-top: 12px;
+  }
+}
+@media (min-width: 600px) {
+  .btnElement span {
+    margin-top: 8px;
+  }
+}
+@media (min-width: 600px) {
+  .btnElement {
+    max-width: 180px;
+  }
+}
+.btnElement:hover {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.btnIcone:before {
+  display: inline-block;
+  content: " ";
+  min-width: 32px;
+  min-height: 32px;
+  margin: 5px;
+  background-repeat: no-repeat;
+}
+@media (min-width: 600px) {
+  .btnIcone:before {
+    margin: 0px 6px 0px 0px;
+  }
+}
+.btnIcone--consulter:before {
+  background-image: url("../assets/icons/view.svg");
+}
+.btnIcone--github:before {
+  background-size: contain;
+  background-image: url("../assets/icons/github--orange.png");
+}
+
 /**
  * @author Samuel Loranger <samuelloranger@gmail.com>
  **/
@@ -777,6 +844,11 @@ header ul li:before {
     display: flex;
     flex-direction: column;
     padding: 0 5%;
+    margin-bottom: 22%;
+  }
+}
+@media (min-width: 850px) {
+  .header__social {
     margin-bottom: 25%;
   }
 }
@@ -836,15 +908,6 @@ header ul li:before {
 /**
   @author Samuel Loranger <samuelloranger@gmail.com>
  */
-.accueil h1 {
-  margin-top: 0;
-  padding-top: 30%;
-}
-@media (min-width: 600px) {
-  .accueil h1 {
-    padding-top: 0;
-  }
-}
 .accueil h2 {
   margin-top: 12%;
   text-align: center;
@@ -881,7 +944,7 @@ header ul li:before {
 }
 @media (min-width: 600px) {
   .accueil__description__infos h1 {
-    margin-top: 0;
+    margin: 0;
     text-align: left;
   }
 }
@@ -996,32 +1059,8 @@ header ul li:before {
     width: 46%;
   }
 }
-.accueil__projets__description--btn {
-  background-color: #f49701;
-  width: 65%;
-  margin: 0 auto 6% auto;
-  border-radius: 6px;
-  padding: 3% 2%;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
-  border: 0;
-  transition: 0.15s ease-in-out;
-  color: white;
-  text-align: center;
-}
-@media (min-width: 600px) {
-  .accueil__projets__description--btn {
-    margin: 0 0 6% 0;
-    max-width: 150px;
-  }
-}
-@media (min-width: 785px) {
-  .accueil__projets__description--btn {
-    width: 50%;
-    max-width: 165px;
-  }
-}
-.accueil__projets__description--btn:hover {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+.accueil__projets__description .btnElement {
+  margin: 5% 0;
 }
 
 /**
@@ -1068,6 +1107,25 @@ header ul li:before {
 .article__contenu h1 {
   text-align: center;
 }
+.article__contenu__boutons {
+  margin: 10% auto 0 auto;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+}
+@media (min-width: 785px) {
+  .article__contenu__boutons {
+    flex-direction: row;
+    width: 75%;
+  }
+}
+@media (min-width: 1100px) {
+  .article__contenu__boutons {
+    width: 55%;
+    max-width: 640px;
+  }
+}
 
 /**
   @author Samuel Loranger <samuelloranger@gmail.com>
@@ -1090,9 +1148,11 @@ header ul li:before {
 
 .contenuSite {
   margin: 0 5%;
+  padding-top: 72px;
 }
 @media (min-width: 600px) {
   .contenuSite {
+    padding-top: 0;
     transition: margin 0.15s ease-in-out;
     width: 100%;
     margin-left: 20%;

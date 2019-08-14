@@ -27,7 +27,17 @@ get_header(); ?>
             <div>
                 <?php the_field('description_longue'); ?>
             </div>
-        </div>
+
+            <div class="article__contenu__boutons">
+                <?php if(get_field("url") != "http://samuelloranger.com/"){ ?>
+                    <a class="btnElement btnElementPrimaire--orange btnIcone btnIcone--consulter" href="<?= get_field("url"); ?>" target="_blank"><span>Voir le projet</span></a>
+                <? } ?>
+
+                <?php if(get_field("url_github") != "https://github.com/samuelloranger/"){ ?>
+                    <a class="btnElement btnElementSecondaire--orange btnIcone btnIcone--github" href="<?= get_field("url_github"); ?>" target="_blank"><span>Voir sur github</a></a>
+                <?php } ?>
+            </div>
+         </div>
     </article>
 </main>
 <!-- Importation du footer -->

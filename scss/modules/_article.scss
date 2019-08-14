@@ -47,5 +47,24 @@
     h1{
       text-align: center;
     }
+
+    &__boutons{
+      margin: 10% auto 0 auto;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-direction: column;
+
+      @media(min-width: 785px){
+        flex-direction: row;
+        width: 75%;
+      }
+
+
+      @media(min-width: 1100px){
+        width: 55%;
+        max-width: 540px;
+      }
+    }
   }
 }

@@ -65,7 +65,7 @@ get_header(); ?>
                             <h3 class="accueil__projets__titre"><?= the_title(); ?></h3>
                             <p><?= get_field("description_courte");?></p>
                         </div>
-                        <a  class="btnElement btnElement--orange btnConsulter" href="<?= get_permalink(); ?>" aria-label="Consulter plus d'informations concernant le projet <?= the_title(); ?>"><span>Consulter</span></a>
+                        <a  class="btnElement btnElementPrimaire--orange btnIcone btnIcone--consulter" href="<?= get_permalink(); ?>" aria-label="Consulter plus d'informations concernant le projet <?= the_title(); ?>"><span>Consulter</span></a>
                     </div>
                 </div>
             <?php } ?>
@@ -97,7 +97,7 @@ get_header(); ?>
                             <h3 class="accueil__projets__titre"><?= the_title(); ?></h3>
                             <?= get_field("description_courte");?>
                         </div>
-                        <a class="btnElement btnElement--orange btnConsulter" href="<?= get_permalink(); ?>" aria-label="Consulter plus d'informations concernant le projet <?= the_title(); ?>" ><span>Consulter</span></a>
+                        <a class="btnElement btnElementPrimaire--orange btnIcone btnIcone--consulter" href="<?= get_permalink(); ?>" aria-label="Consulter plus d'informations concernant le projet <?= the_title(); ?>" ><span>Consulter</span></a>
                     </div>
                 </div>
             <?php } ?>
