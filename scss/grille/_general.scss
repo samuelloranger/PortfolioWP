@@ -12,15 +12,11 @@
   padding-top: 72px;
 
   @media(min-width: $tablet){
-    padding-top: 0;
     transition: margin 0.15s ease-in-out;
     width: 100%;
-    margin-left: 20%;
+    margin-left: 75px;
     margin-right: 0;
-  }
-
-  @media(min-width: $desktop-large){
-    margin-left: 10%;
+    padding: 0 2%;
   }
 }
 

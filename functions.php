@@ -309,10 +309,4 @@ function special_nav_class ($classes, $item) {
     return $classes;
 }
 
-
-
-add_image_size("thumbnail@2x", 320, 180);
-add_image_size("medium@2x", 640, 360);
-add_image_size("large@2x", 1280, 750);
-add_theme_support('post-thumbnails');
 ?>

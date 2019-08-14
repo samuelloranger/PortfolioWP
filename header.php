@@ -16,7 +16,7 @@
 
     </title>
     <meta name="author" content="Samuel Loranger">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Wordpress, Développemenr Web, Développeur, Intégrateur, ">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Wordpress, Développemenr Web, Développeur, Intégrateur">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="theme-color" content="#000000">
 
@@ -31,8 +31,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
-<!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/css/styles.css"/>-->
-    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/styles.min.css"/>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/styles.css"/>
+<!--    <link rel="stylesheet" href="--><?//= get_template_directory_uri(); ?><!--/css/styles.min.css"/>-->
     <?php wp_head(); ?>
 
 </head>
@@ -42,17 +42,53 @@
 <header id="en-tete" class="header">
     <noscript class="noscript">Attention! Ce site fonctionne mieux avec Javascript... Veuillez l'activer.</noscript>
 
+    <!--  HEADER DESKTOP  -->
     <div class="header__desktop">
         <div class="logo">
             <img src="<?= get_template_directory_uri();?>/assets/sl-logo.png" alt="Logo de Samuel Loranger" class="">
         </div>
         <?php if(has_nav_menu('principal')) : ?>
             <nav id="principal" class="header__desktop__nav">
+                <a class="header__desktop__nav--home" href="<?= get_site_url(); ?>"><img src="<?= get_template_directory_uri(); ?>/assets/icons/home.svg"/></a>
+
                 <?php wp_nav_menu( array('theme_location' => 'principal'));?>
             </nav>
         <?php endif; ?>
     </div>
 
+    <div class="header__social">
+        <?php if(get_theme_mod( 'social_show_facebook', false) == "true"){ ?>
+            <a href="<?= get_theme_mod( 'link_facebook'); ?>">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/facebook.png" alt="Lien Facebook">
+            </a>
+        <?php } ?>
+
+        <?php if(get_theme_mod( 'social_show_twitter', false) == "true"){ ?>
+            <a href="<?= get_theme_mod( 'link_twitter'); ?>">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/twitter.png" alt="Lien Twitter">
+            </a>
+        <?php } ?>
+
+        <?php if(get_theme_mod( 'social_show_instagram', false) == "true"){ ?>
+            <a href="<?= get_theme_mod( 'link_instagram'); ?>">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/instagram.png" alt="Lien Instagram">
+            </a>
+        <?php } ?>
+
+        <?php if(get_theme_mod( 'social_show_github', false) == "true"){ ?>
+            <a href="<?= get_theme_mod("link_github"); ?>">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/github.png" alt="Lien GitHub">
+            </a>
+        <?php } ?>
+
+        <?php if(get_theme_mod( 'social_show_linkedin', false) == "true"){ ?>
+            <a href="<?= get_theme_mod( 'link_linkedin'); ?>">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/linkedin.png" alt="Lien LinkedIn">
+            </a>
+        <?php } ?>
+    </div>
+
+    <!--  HEADER MOBILE  -->
     <?php if(has_nav_menu('principal')) : ?>
     <div class="header__mobile">
         <div class="header__mobile__conteneur">
@@ -65,10 +101,15 @@
             </button>
         </div>
 
+
         <nav id="principal" class="header__mobile__nav header__mobile__nav--ferme">
-            <?php wp_nav_menu( array('theme_location' => 'principal'));?>
+
+            <?php //Importation du menu principal, peu ne pas être utilisé
+            wp_nav_menu( array('theme_location' => 'principal'));?>
 
             <div class="header__socialMobile">
+                <a class="header__mobile__nav--home" href="<?= get_site_url(); ?>"><img src="<?= get_template_directory_uri(); ?>/assets/icons/home.svg"/></a>
+
                 <?php if(get_theme_mod( 'social_show_facebook', false) == "true"){ ?>
                     <a href="<?= get_theme_mod( 'link_facebook'); ?>">
                         <img src="<?= get_template_directory_uri(); ?>/assets/social/facebook.png" alt="Lien Facebook">
@@ -103,42 +144,6 @@
     </div>
     <?php endif; ?>
 
-    <div class="header__social">
-        <?php if(get_theme_mod( 'social_show_facebook', false) == "true"){ ?>
-            <a href="<?= get_theme_mod( 'link_facebook'); ?>">
-                <img src="<?= get_template_directory_uri(); ?>/assets/social/facebook.png" alt="Lien Facebook">
-                <span><?= get_theme_mod( 'facebook'); ?></span>
-            </a>
-        <?php } ?>
-
-        <?php if(get_theme_mod( 'social_show_twitter', false) == "true"){ ?>
-            <a href="<?= get_theme_mod( 'link_twitter'); ?>">
-                <img src="<?= get_template_directory_uri(); ?>/assets/social/twitter.png" alt="Lien Twitter">
-                <span><?= get_theme_mod( 'twitter'); ?></span>
-            </a>
-        <?php } ?>
-
-        <?php if(get_theme_mod( 'social_show_instagram', false) == "true"){ ?>
-            <a href="<?= get_theme_mod( 'link_instagram'); ?>">
-                <img src="<?= get_template_directory_uri(); ?>/assets/social/instagram.png" alt="Lien Instagram">
-                <span><?= get_theme_mod( 'instagram'); ?></span>
-            </a>
-        <?php } ?>
-
-        <?php if(get_theme_mod( 'social_show_github', false) == "true"){ ?>
-            <a href="<?= get_theme_mod("link_github"); ?>">
-                <img src="<?= get_template_directory_uri(); ?>/assets/social/github.png" alt="Lien GitHub">
-                <span><?= get_theme_mod("github"); ?></span>
-            </a>
-        <?php } ?>
-
-        <?php if(get_theme_mod( 'social_show_linkedin', false) == "true"){ ?>
-            <a href="<?= get_theme_mod( 'link_linkedin'); ?>">
-                <img src="<?= get_template_directory_uri(); ?>/assets/social/linkedin.png" alt="Lien LinkedIn">
-                <span><?= get_theme_mod( 'linkedin'); ?></span>
-            </a>
-        <?php } ?>
-    </div>
 </header>
 
 <div class="contenuSite">

@@ -15,7 +15,7 @@ h1{
  }
 
 h2{
-  font-size: 30px;
+  font-size: 22px;
 
   @media(min-width: $tablet){
     font-size: 24px;
@@ -23,11 +23,7 @@ h2{
 }
 
 h3{
-  font-size: 22px;
-
-  @media(min-width: $tablet){
-    font-size: 20px;
-  }
+  font-size: 20px;
 }
 
 h4{
