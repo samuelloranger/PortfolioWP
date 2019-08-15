@@ -4,26 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Titan+One|Roboto');
 
-/** Polices de caractères **/
-@font-face {
-  font-family: 'titan_one';
-  src: url("../../assets/fonts/Titan_One/TitanOne-Regular.ttf") format("ttf");
-}
-
-@font-face {
-  font-family: 'roboto-bold';
-  src: url("../../assets/fonts/Roboto/Roboto-Bold.ttf") format("ttf");
-}
-
-@font-face {
-  font-family: 'roboto';
-  src: url("../../assets/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
-}
-
-$fontePrimaire: 'Titan One', titan_one, Arial, sans-serif;
-$fonteSecondaire: 'Roboto', roboto, Arial, sans-serif;
-$fonteSecondaireBold: 'Roboto-Bold', roboto-bold, Arial, sans-serif;
-
 /* Couleurs de base */
 $grey: #363636;
 $palegrey: #dedede;

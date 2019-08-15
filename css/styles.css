@@ -487,19 +487,6 @@ th {
 /**
   * @author Samuel Loranger <samuelloranger@gmail.com>
  **/
-/** Polices de caractères **/
-@font-face {
-  font-family: "titan_one";
-  src: url("../../assets/fonts/Titan_One/TitanOne-Regular.ttf") format("ttf");
-}
-@font-face {
-  font-family: "roboto-bold";
-  src: url("../../assets/fonts/Roboto/Roboto-Bold.ttf") format("ttf");
-}
-@font-face {
-  font-family: "roboto";
-  src: url("../../assets/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
-}
 /* Couleurs de base */
 /** Points de rupture **/
 /**
@@ -548,7 +535,7 @@ th {
   @author Samuel Loranger <samuelloranger@gmail.com>
  */
 h1, h2, h3 {
-  font-family: "Titan One", titan_one, Arial, sans-serif;
+  font-family: "Titan One", Arial, sans-serif;
 }
 
 h1 {
@@ -575,12 +562,13 @@ h3 {
 
 h4 {
   font-size: 18px;
-  font-family: "Roboto-Bold", roboto-bold, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: bold;
 }
 
 p, span, ul li, body {
   font-size: 16px;
-  font-family: "Roboto", roboto, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 a {
@@ -748,7 +736,8 @@ header ul li:before {
   padding: 4px;
   top: 16%;
   left: -85px;
-  font-family: "Roboto-Bold", roboto-bold, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: bold;
   background-color: #FE4D5F;
   border-radius: 4px;
   z-index: 1;
@@ -806,7 +795,8 @@ header ul li:before {
 .header .menu-menu-principal-container .menu a {
   color: white;
   font-size: 18px;
-  font-family: "Roboto-Bold", roboto-bold, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: bold;
 }
 @media (min-width: 600px) {
   .header .menu-menu-principal-container .menu a {

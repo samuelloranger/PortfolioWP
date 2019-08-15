@@ -56,7 +56,8 @@
       padding: 4px;
       top: 16%;
       left: -85px;
-      font-family: $fonteSecondaireBold;
+      font-family: "Roboto", Arial, sans-serif ;
+      font-weight: bold;
       background-color: $rouge;
       border-radius: 4px;
       z-index: 1;
@@ -120,7 +121,8 @@
       a {
         color: white;
         font-size: 18px;
-        font-family: $fonteSecondaireBold;
+        font-family: "Roboto", Arial, sans-serif ;
+        font-weight: bold;
 
         @media(min-width: $tablet){
           font-size: 24px;
