@@ -49,7 +49,7 @@
         </div>
         <?php if(has_nav_menu('principal')) : ?>
             <nav id="principal" class="header__desktop__nav">
-                <a class="header__desktop__nav--home" href="<?= get_site_url(); ?>"><img src="<?= get_template_directory_uri(); ?>/assets/icons/home.svg"/></a>
+                <a href="<?= get_site_url(); ?>"><img class="home" src="<?= get_template_directory_uri(); ?>/assets/icons/home.svg"/><span>Accueil</span></a>
 
                 <?php wp_nav_menu( array('theme_location' => 'principal'));?>
             </nav>
@@ -59,31 +59,31 @@
     <div class="header__social">
         <?php if(get_theme_mod( 'social_show_facebook', false) == "true"){ ?>
             <a href="<?= get_theme_mod( 'link_facebook'); ?>">
-                <img src="<?= get_template_directory_uri(); ?>/assets/social/facebook.png" alt="Lien Facebook">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/facebook.png" alt="Lien Facebook"><span><?= get_theme_mod( 'facebook'); ?></span>
             </a>
         <?php } ?>
 
         <?php if(get_theme_mod( 'social_show_twitter', false) == "true"){ ?>
             <a href="<?= get_theme_mod( 'link_twitter'); ?>">
-                <img src="<?= get_template_directory_uri(); ?>/assets/social/twitter.png" alt="Lien Twitter">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/twitter.png" alt="Lien Twitter"><span><?= get_theme_mod( 'twitter'); ?></span>
             </a>
         <?php } ?>
 
         <?php if(get_theme_mod( 'social_show_instagram', false) == "true"){ ?>
             <a href="<?= get_theme_mod( 'link_instagram'); ?>">
-                <img src="<?= get_template_directory_uri(); ?>/assets/social/instagram.png" alt="Lien Instagram">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/instagram.png" alt="Lien Instagram"><span><?= get_theme_mod( 'instagram'); ?></span>
             </a>
         <?php } ?>
 
         <?php if(get_theme_mod( 'social_show_github', false) == "true"){ ?>
             <a href="<?= get_theme_mod("link_github"); ?>">
-                <img src="<?= get_template_directory_uri(); ?>/assets/social/github.png" alt="Lien GitHub">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/github.png" alt="Lien GitHub"><span><?= get_theme_mod( 'github'); ?></span>
             </a>
         <?php } ?>
 
         <?php if(get_theme_mod( 'social_show_linkedin', false) == "true"){ ?>
             <a href="<?= get_theme_mod( 'link_linkedin'); ?>">
-                <img src="<?= get_template_directory_uri(); ?>/assets/social/linkedin.png" alt="Lien LinkedIn">
+                <img src="<?= get_template_directory_uri(); ?>/assets/social/linkedin.png" alt="Lien LinkedIn"><span><?= get_theme_mod( 'linkedin'); ?></span>
             </a>
         <?php } ?>
     </div>

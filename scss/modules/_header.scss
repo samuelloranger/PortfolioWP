@@ -15,7 +15,67 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
+    z-index: 1;
+  }
+
+  a{
+    display: block;
+    position: relative;
+    width: 60%;
+    margin: 0;
+    min-width: 32px;
+    min-height: 32px;
+    transform: scale(0.9);
+    transition: 0.15s ease-in-out;
+
+    @media(min-width: $tablet){
+      margin: 5% auto 20% auto;
+    }
+
+    .home{
+      width: 90%;
+    }
+
+    &:hover, &:focus{
+      transform: scale(1.0);
+
+      span{
+        left: 52px;
+        opacity: 1;
+      }
+    }
+
+    img{
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    span{
+      position: absolute;
+      padding: 4px;
+      top: 16%;
+      left: -85px;
+      font-family: $fonteSecondaireBold;
+      background-color: $rouge;
+      border-radius: 4px;
+      z-index: 1;
+      transition: 0.25s ease-in-out;
+      opacity: 0;
+
+      &:before{
+        position: absolute;
+        top: 4px;
+        left: -9px;
+        display: block;
+        content: " ";
+        width: 0;
+        height: 0;
+        border-top: 9px solid transparent;
+        border-right: 12px solid #FE4D5F;
+        border-bottom: 9px solid transparent;
+      }
+    }
   }
 
   .menu-menu-principal-container {
@@ -90,17 +150,17 @@
     &__nav{
       margin-top: 15%;
 
-      &--home{
-        display: block;
-        width: 75%;
-        margin: 0 auto;
-        transition: 0.15s ease-in-out;
-        transform: scale(0.9);
-
-        &:hover{
-          transform: scale(1.0);
-        }
-      }
+      //a{
+      //  display: block;
+      //  width: 75%;
+      //  margin: 0 auto;
+      //  transition: 0.15s ease-in-out;
+      //  transform: scale(0.9);
+      //
+      //  &:hover{
+      //    transform: scale(1.0);
+      //  }
+      //}
     }
   }
 
@@ -142,10 +202,6 @@
         max-height: 0;
         padding: 0;
       }
-
-      &--home{
-        width: 15%;
-      }
     }
   }
 
@@ -157,27 +213,10 @@
       flex-direction: column;
       padding: 0 5%;
       margin-bottom: 60%;
+      background-color: $grey;
     }
 
     a{
-      display: block;
-      width: 60%;
-      margin: 5% auto 20% auto;
-      transition: 0.15s ease-in-out;
-      transform: scale(0.9);
-      min-width: 32px;
-      min-height: 32px;
-
-      &:hover{
-        transform: scale(1.0);
-      }
-
-      img{
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-
       &:last-of-type{
         min-width: 35px;
         min-height: 30px;
@@ -187,12 +226,13 @@
     &Mobile{
       display: flex;
       justify-content: space-between;
-      padding: 0 8%;
+      padding: 0 2%;
       margin: 4% 0;
 
       a{
         min-width: 32px;
         max-width: 12%;
+        height: 100%;
 
         &:last-of-type{
           max-width: 15%;

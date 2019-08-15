@@ -147,13 +147,14 @@
       position: relative;
       color: white;
       transition: 0.25s ease-in-out;
-      margin-bottom: 2%;
+      margin-bottom: 12%;
+      //z-index: -1;
 
       @media(min-width: $tablet){
         margin-bottom: 0;
       }
 
-      &:hover{
+      &:hover, &:focus{
         @media(min-width: $tablet){
           div{
             top: 0;
