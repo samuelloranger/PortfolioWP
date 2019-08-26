@@ -66,9 +66,15 @@ get_header(); ?>
 
         if ($posts):
             foreach($posts as $post): ?>
-                <?php $image = get_field('image'); ?>
+                <?php
+                    //On va chercher l'image, ainsi que sa taille
+                    $image = get_field('image');
+                    $size = "medium";
+                    $image_url = $image['sizes'][$size];
+                ?>
+
                 <a class="accueil__projets__projet" href="<?= get_permalink(); ?>" aria-label="Consulter plus d'informations concernant le projet <?= the_title(); ?>">
-                    <img class="accueil__projets__projet--image" src="<?php echo $image['url']; ?>" alt="Image du projet : <?= get_field("nom_service");?>"/>
+                    <img class="accueil__projets__projet--image" src="<?= $image_url; ?>" alt="Image du projet : <?= get_field("nom_service");?>"/>
 
                     <div class="accueil__projets__projet--description">
                         <h2><?= the_title(); ?></h2>
